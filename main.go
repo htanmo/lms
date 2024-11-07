@@ -42,10 +42,10 @@ func main() {
 	student.Get("/courses/:id/progress", handlers.TrackProgress)
 
 	// Protected routes (Admin and Instructor only)
-	protected := v1.Group("/protected", middleware.JWTMiddleware("admin", "instructor"))
-	protected.Post("/courses", handlers.CreateCourse)
-	protected.Put("/courses/:id", handlers.UpdateCourse)
-	protected.Delete("/courses/:id", handlers.DeleteCourse)
+	adminInstructor := v1.Group("/admin", middleware.JWTMiddleware("admin", "instructor"))
+	adminInstructor.Post("/courses", handlers.CreateCourse)
+	adminInstructor.Put("/courses/:id", handlers.UpdateCourse)
+	adminInstructor.Delete("/courses/:id", handlers.DeleteCourse)
 
 	log.Fatal(app.Listen(":8000"))
 }
