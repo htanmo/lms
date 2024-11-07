@@ -17,7 +17,7 @@ A simple Learning Management System (LMS) API that allows users to manage course
 
 ### User Authentication
 #### Public Routes
-- `POST /api/v1/public/register` - Register a new user
+- `POST /api/v1/register` - Register a new user
   - Request Body:
     ```json
     {
@@ -28,7 +28,7 @@ A simple Learning Management System (LMS) API that allows users to manage course
     }
     ```
 
-- `POST /api/v1/public/login` - Login a user
+- `POST /api/v1/login` - Login a user
   - Request Body:
     ```json
     {
@@ -39,10 +39,10 @@ A simple Learning Management System (LMS) API that allows users to manage course
 
 ### Courses
 #### Public and Protected Routes
-- `GET /api/v1/public/courses` - Get all available courses (Public)
-- `GET /api/v1/public/courses/{id}` - Get details of a specific course
+- `GET /api/v1/courses` - Get all available courses (Public)
+- `GET /api/v1/courses/{id}` - Get details of a specific course
 
-- `POST /api/v1/protected/courses` - Create a new course (Admin/Instructor)
+- `POST /api/v1/admin/courses` - Create a new course (Admin/Instructor)
   - Request Body:
     ```json
     {
@@ -52,7 +52,7 @@ A simple Learning Management System (LMS) API that allows users to manage course
     }
     ```
 
-- `PUT /api/v1/protected/courses/{id}` - Update course (Instructor/Admin)
+- `PUT /api/v1/admin/courses/{id}` - Update course (Instructor/Admin)
   - Request Body:
     ```json
     {
@@ -62,7 +62,7 @@ A simple Learning Management System (LMS) API that allows users to manage course
     }
     ```
 
-- `DELETE /api/v1/protected/courses/{id}` - Delete course (Instructor/Admin)
+- `DELETE /api/v1/admin/courses/{id}` - Delete course (Instructor/Admin)
 
 ### Enrollments
 #### Student Routes
