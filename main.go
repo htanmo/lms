@@ -30,11 +30,10 @@ func main() {
 	v1 := api.Group("/v1")
 
 	// Public routes
-	public := v1.Group("/public")
-	public.Post("/register", handlers.Register)
-	public.Post("/login", handlers.Login)
-	public.Get("/courses", handlers.GetCourses)
-	public.Get("/courses/:id", handlers.GetCourseDetails)
+	v1.Post("/register", handlers.Register)
+	v1.Post("/login", handlers.Login)
+	v1.Get("/courses", handlers.GetCourses)
+	v1.Get("/courses/:id", handlers.GetCourseDetails)
 
 	// Student-only routes
 	student := v1.Group("/student", middleware.JWTMiddleware("student"))
